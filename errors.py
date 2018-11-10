@@ -17,3 +17,12 @@ class UserNotAvailable(Exception):
 
     def __str__(self):
         return 'Не верные данные пользователя {}'.format(self.username)
+
+
+class StreamNotAvailable(Exception):
+    def __init__(self, stream_name: str):
+        self.stream_name = stream_name
+
+    def __str__(self):
+        return 'Поток {} не доступен'.format(self.stream_name)
+
