@@ -9,8 +9,10 @@ if __name__ == '__main__':
     stream_name = '1541853609DUS542'
     try:
         cams = CamsApi(secret.username, secret.password)
-        server = cams.get_server(stream_name)
-        fluss = FlussApi(server, secret.fusername, secret.fpassword)
+        account_activity = cams.get_cameras_parameters(stream_name, 'contractActive')
+        camera_token = cams.get_cameras_parameters(stream_name, 'token')
+        server = cams.get_cameras_parameters(stream_name, 'server')
+        fluss = FlussApi(server, secret.fusername, secret.fpassword, camera_token)
         print(fluss.restart_stream(stream_name))
     except requests.exceptions.HTTPError as e:
         print(e)
