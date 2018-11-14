@@ -10,6 +10,7 @@ class CamsApi:
         self.username = username
         self.password = password
         self.token = None
+        self.cam_token = None
         self.camera_url = 'http://cams.ufanet.ru/api/v3/cameras/{}/token'
         self.auth_url = 'http://cams.ufanet.ru/api/v3/auth/login-jwt'
         self._auth()

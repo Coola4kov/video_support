@@ -6,7 +6,7 @@ import secret
 import errors
 
 if __name__ == '__main__':
-    stream_name = '72261308ST-5'
+    stream_name = '1541853609DUS542'
     try:
         cams = CamsApi(secret.username, secret.password)
         server = cams.get_server(stream_name)
@@ -22,3 +22,11 @@ if __name__ == '__main__':
         print(e)
     except errors.StreamNotAvailable as e:
         print(e)
+
+# TODO camera password check
+# TODO camera actual model check
+# TODO UGIN camera model fix
+# TODO camera time fix
+# TODO camera get to the right condition
+# TODO assign camera name
+# TODO flussonic archive status
